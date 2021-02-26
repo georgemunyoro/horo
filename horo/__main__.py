@@ -25,7 +25,7 @@ class Horoscope:
         self.data_filepath = data_filepath
 
         self.sign = False
-        
+
         if not os.path.exists(data_filepath): self._save_user_sign(self.get_user_sign())
         else: self.print_user_horoscope()
 
@@ -46,11 +46,11 @@ class Horoscope:
     @staticmethod
     def _get_user_permission(message):
         return input(message + " [y/N]") == "y"
-        
+
     @staticmethod
     def get_user_sign():
         if not Horoscope._get_user_permission(
-        "It appears this is your first time running this program,\nin order to continue, you must provide your birthday."): quit()
+            "It appears this is your first time running this program,\nin order to continue, you must provide your birthday."): quit()
 
         day, month = input("what's your birthday? e.g. '<day:int> <month:int>' '5 5' for 5 May : ").split()
         user_birthday = datetime.date(2021, int(month), int(day))
@@ -62,7 +62,7 @@ class Horoscope:
 
 
 def main():
-    horo = Horoscope()
+    Horoscope()
 
 
 if __name__ == "__main__":
